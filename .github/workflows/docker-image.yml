@@ -34,6 +34,5 @@ jobs:
       uses: digitalocean/action-doctl@v2
       with:
         token: ${{secrets.TOKENDIGITAL}}
-    - name: Prueba correr dockers
-      run: docker stop $(echo $IMAGE_NAME)
+        script: docker stop $(echo $IMAGE_NAME)
         
