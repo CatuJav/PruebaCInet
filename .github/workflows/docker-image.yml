@@ -34,9 +34,6 @@ jobs:
     - name: Install doctl
       uses: digitalocean/action-doctl@v2
       with:
-        host: 142.93.63.98
-        username: root
-        key: ${{secrets.CLAVEDIGITAL}}
         token: ${{secrets.TOKENDIGITAL}}
         script: |
           docker login -u ${{ secrets.USERNAME }} -p ${{ secrets.PASSWORD }}
