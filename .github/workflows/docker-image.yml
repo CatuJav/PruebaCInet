@@ -37,7 +37,7 @@ jobs:
         token: ${{secrets.TOKENDIGITAL}}
     - name: Prueba correr dockers
       run: |
-        docker stop $(echo $IMAGE_NAME)
-        docker rm $(echo $IMAGE_NAME)
-        docker pull catujav/testpruebapelis:latest
-        docker run -p 2277:80 --name $(echo $IMAGE_NAME) -d catujav/testpruebapelis
+        doctl docker stop $(echo $IMAGE_NAME)
+        doctl docker rm $(echo $IMAGE_NAME)
+        doctl docker pull catujav/testpruebapelis:latest
+        doctl docker run -p 2277:80 --name $(echo $IMAGE_NAME) -d catujav/testpruebapelis
