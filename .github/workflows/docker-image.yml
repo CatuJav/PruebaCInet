@@ -35,9 +35,9 @@ jobs:
       uses: digitalocean/action-doctl@v2
       with:
         token: ${{secrets.TOKENDIGITAL}}
-        script: |
-          docker login -u ${{ secrets.USERNAME }} -p ${{ secrets.PASSWORD }}
-          docker stop $(echo $IMAGE_NAME)
-          docker rm $(echo $IMAGE_NAME)
-          docker pull catujav/testpruebapelis:latest
-          docker run -p 2277:80 --name $(echo $IMAGE_NAME) -d catujav/testpruebapelis
+    - name: Prueba correr dockers
+      run: |
+        docker stop $(echo $IMAGE_NAME)
+        docker rm $(echo $IMAGE_NAME)
+        docker pull catujav/testpruebapelis:latest
+        docker run -p 2277:80 --name $(echo $IMAGE_NAME) -d catujav/testpruebapelis
