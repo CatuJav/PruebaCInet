@@ -38,4 +38,5 @@ jobs:
         username: root
         key: ${{secrets.CLAVEDIGITAL}}
         token: ${{secrets.TOKENDIGITAL}}
-        script: ls
+        script: |
+          docker stop $(echo $IMAGE_NAME)
