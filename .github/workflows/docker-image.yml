@@ -25,8 +25,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
     - name: Push a docker hub 
       run: docker push catujav/testpruebapelis:latest
-    
-
+  
 #2
   #deploy:
     #runs-on: ubuntu-latest
@@ -38,9 +37,5 @@ jobs:
     - name: Otro paso
       run:  ssh-keyscan 142.93.63.98 >> ~/.ssh/known_hosts
     - name: Prueba correr dockers
-      run: |
-        ssh root@142.93.63.98 
-        docker stop $(echo $IMAGE_NAME)
-        docker rm $(echo $IMAGE_NAME)
-        docker pull catujav/testpruebapelis:latest
-        docker run -p 2277:80 --name $(echo $IMAGE_NAME) -d catujav/testpruebapelis
+      run: docker stop $(echo $IMAGE_NAME)
+        
