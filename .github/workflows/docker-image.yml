@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [ "main" ]
 
+env:
+  IMAGE_NAME: "catujav/testpruebapelis"
 jobs:
 
   build:
@@ -23,3 +25,18 @@ jobs:
         password: ${{ secrets.PASSWORD }}
     - name: Push a docker hub 
       run: docker push catujav/testpruebapelis:latest
+#2
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install doctl
+    - uses: digitalocean/action-doctl@v2
+      with:
+        #token: ${{secrets.TOKENDIGITAL}}
+        envs: IMAGE_NAME
+        host: 142.93.63.98
+        username: root
+        key: ${{secrets.CLAVEDIGITAL}}
+        script:
+          ls
+      
