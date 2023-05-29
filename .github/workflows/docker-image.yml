@@ -40,3 +40,6 @@ jobs:
         token: ${{secrets.TOKENDIGITAL}}
         script: |
           docker stop $(echo $IMAGE_NAME)
+          docker rm $(echo $IMAGE_NAME)
+          docker pull catujav/testpruebapelis:latest
+          docker run -p 2277:80 --name pelis -d catujav/testpruebapelis
