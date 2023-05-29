@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 env:
-  IMAGE_NAME: "catujav/testpruebapelis"
+  IMAGE_NAME: catujav/testpruebapelis
 jobs:
 
   build:
@@ -37,6 +37,5 @@ jobs:
         host: 142.93.63.98
         username: root
         key: ${{secrets.CLAVEDIGITAL}}
-        script:
-          ls
+        script: ls
       
