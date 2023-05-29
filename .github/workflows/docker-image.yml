@@ -25,10 +25,6 @@ jobs:
         password: ${{ secrets.PASSWORD }}
     - name: Push a docker hub 
       run: docker push catujav/testpruebapelis:latest
-      
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
     - name: Install doctl
     - uses: digitalocean/action-doctl@v2
       with:
