@@ -38,6 +38,7 @@ jobs:
         username: root
         key: ${{secrets.CLAVEDIGITAL}}
         token: ${{secrets.TOKENDIGITAL}}
+        envs: IMAGE_NAME
         script: |
           docker stop $(echo $IMAGE_NAME)
           docker rm $(echo $IMAGE_NAME)
