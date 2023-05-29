@@ -1,0 +1,29 @@
+﻿@model EnTendencia
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<div class="container text-center">
+    <p>@ViewBag.resultado</p>
+    <div class="row">
+        @foreach (var item in Model.Results)
+        {
+            
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="https://image.tmdb.org/t/p/w500/@item.BackdropPath" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Title</h5>
+                        <div class="mh-50">@item.Overview</div>
+                        <a href="#" class="btn btn-primary">ir</a>
+                    </div>
+                </div>
+            </div>
+            
+            
+}
+    </div>
+</div>
