@@ -32,8 +32,6 @@ jobs:
     - name: Install doctl
     - uses: digitalocean/action-doctl@v2
       with:
-        #token: ${{secrets.TOKENDIGITAL}}
-        envs: IMAGE_NAME
         host: 142.93.63.98
         username: root
         key: ${{secrets.CLAVEDIGITAL}}
