@@ -38,9 +38,8 @@ jobs:
         username: root
         key: ${{secrets.CLAVEDIGITAL}}
         token: ${{secrets.TOKENDIGITAL}}
-        envs: IMAGE_NAME
         script: |
-          docker stop pelis
-          docker rm pelis
+          docker stop $(echo $IMAGE_NAME)
+          docker rm $(echo $IMAGE_NAME)
           docker pull catujav/testpruebapelis:latest
-          docker run -p 2277:80 --name pelis -d catujav/testpruebapelis
+          docker run -p 2277:80 --name $(echo $IMAGE_NAME) -d catujav/testpruebapelis
