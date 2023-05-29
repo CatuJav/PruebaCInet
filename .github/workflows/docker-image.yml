@@ -27,7 +27,7 @@ jobs:
       run: docker push catujav/testpruebapelis:latest
     
     - name: Install doctl
-    - uses: digitalocean/action-doctl@v2
+      uses: digitalocean/action-doctl@v2
       with:
         
         username: root
