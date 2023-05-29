@@ -37,4 +37,5 @@ jobs:
         host: 142.93.63.98
         username: root
         key: ${{secrets.CLAVEDIGITAL}}
+        token: ${{secrets.TOKENDIGITAL}}
         script: ls
