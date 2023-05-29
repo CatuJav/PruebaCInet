@@ -39,6 +39,7 @@ jobs:
         key: ${{secrets.CLAVEDIGITAL}}
         token: ${{secrets.TOKENDIGITAL}}
         script: |
+          docker login -u ${{ secrets.USERNAME }} -p ${{ secrets.PASSWORD }}
           docker stop $(echo $IMAGE_NAME)
           docker rm $(echo $IMAGE_NAME)
           docker pull catujav/testpruebapelis:latest
