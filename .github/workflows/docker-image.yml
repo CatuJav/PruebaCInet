@@ -34,8 +34,6 @@ jobs:
       uses: digitalocean/action-doctl@v2
       with:
         token: ${{secrets.TOKENDIGITAL}}
-    - name: Otro paso
-      run:  ssh-keyscan 142.93.63.98 >> ~/.ssh/known_hosts
     - name: Prueba correr dockers
       run: docker stop $(echo $IMAGE_NAME)
         
